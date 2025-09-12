@@ -1,0 +1,1 @@
+ALTER TABLE content ADD `category` text DEFAULT 'other' NOT NULL;

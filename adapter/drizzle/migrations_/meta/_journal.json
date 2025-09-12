@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1712981970347,
+      "tag": "0000_lying_spot",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1713858989184,
+      "tag": "0001_curved_korath",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1714471066114,
+      "tag": "0002_legal_mikhail_rasputin",
+      "breakpoints": true
+    }
+  ]
+}

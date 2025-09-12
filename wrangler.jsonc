@@ -1,0 +1,87 @@
+{
+  "name": "betree",
+  "compatibility_date": "2025-03-11",
+  "main": "./build/server/index.js",
+  "assets": {
+    "directory": "./build/client/"
+  },
+  "workers_dev": true,
+  "preview_urls": true,
+  "vars": {
+    "R2_HOST": "",
+    "LOG_LEVEL": "debug",
+    "LOG_FORMAT": "console",
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "betree-local",
+      "database_id": "local",
+      "migrations_dir": "./adapter/drizzle/migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "betree-local"
+    }
+  ],
+  // ---------------------------
+  // Development 設定
+  // ---------------------------
+  "env": {
+    "development": {
+      "compatibility_date": "2025-03-11",
+      "vars": {
+        "R2_HOST": "",
+        "LOG_LEVEL": "info",
+        "LOG_FORMAT": "json",
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "betree-development",
+          "database_id": "",
+          "migrations_dir": "./adapter/drizzle/migrations"
+        }
+      ],
+      "r2_buckets": [
+        {
+          "binding": "BUCKET",
+          "bucket_name": "betree-development"
+        }
+      ]
+    },
+    // ---------------------------
+    // Production 設定
+    // ---------------------------
+    "production": {
+      "compatibility_date": "2025-03-11",
+      "routes": [
+        {
+          "pattern": "betree.nw-union.net",
+          "custom_domain": true
+        }
+      ],
+      "vars": {
+        "R2_HOST": "",
+        "LOG_LEVEL": "info",
+        "LOG_FORMAT": "json",
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "betree-production",
+          "database_id": "",
+          "migrations_dir": "./adapter/drizzle/migrations"
+        }
+      ],
+      "r2_buckets": [
+        {
+          "binding": "BUCKET",
+          "bucket_name": "betree-production"
+        }
+      ]
+    }
+  }
+}
