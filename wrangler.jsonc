@@ -10,7 +10,7 @@
   "vars": {
     "R2_HOST": "",
     "LOG_LEVEL": "debug",
-    "LOG_FORMAT": "console",
+    "LOG_FORMAT": "console"
   },
   "d1_databases": [
     {
@@ -20,12 +20,12 @@
       "migrations_dir": "./adapter/drizzle/migrations"
     }
   ],
-  "r2_buckets": [
-    {
-      "binding": "BUCKET",
-      "bucket_name": "betree-local"
-    }
-  ],
+  //"r2_buckets": [
+  //  {
+  //    "binding": "BUCKET",
+  //    "bucket_name": "betree-local"
+  //  }
+  //],
   // ---------------------------
   // Development 設定
   // ---------------------------
@@ -35,22 +35,22 @@
       "vars": {
         "R2_HOST": "",
         "LOG_LEVEL": "info",
-        "LOG_FORMAT": "json",
+        "LOG_FORMAT": "json"
       },
       "d1_databases": [
         {
           "binding": "DB",
           "database_name": "betree-development",
-          "database_id": "",
+          "database_id": "8879aec8-901a-4704-856d-661ab680731e",
           "migrations_dir": "./adapter/drizzle/migrations"
         }
       ],
-      "r2_buckets": [
-        {
-          "binding": "BUCKET",
-          "bucket_name": "betree-development"
-        }
-      ]
+      //"r2_buckets": [
+      //  {
+      //    "binding": "BUCKET",
+      //    "bucket_name": "betree-development"
+      //  }
+      //]
     },
     // ---------------------------
     // Production 設定
@@ -66,22 +66,22 @@
       "vars": {
         "R2_HOST": "",
         "LOG_LEVEL": "info",
-        "LOG_FORMAT": "json",
+        "LOG_FORMAT": "json"
       },
       "d1_databases": [
         {
           "binding": "DB",
           "database_name": "betree-production",
-          "database_id": "",
+          "database_id": "00b4c7e0-2148-450c-ba91-4628d47c6d16",
           "migrations_dir": "./adapter/drizzle/migrations"
         }
       ],
-      "r2_buckets": [
-        {
-          "binding": "BUCKET",
-          "bucket_name": "betree-production"
-        }
-      ]
+      //"r2_buckets": [
+      //  {
+      //    "binding": "BUCKET",
+      //    "bucket_name": "betree-production"
+      //  }
+      //]
     }
   }
 }

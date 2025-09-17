@@ -1,0 +1,34 @@
+name: PR
+on: [pull_request]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  # 自動生成系コードをコミットする
+  check:
+    uses: nw-union/.github/.github/workflows/auto_update_with_bun.yml@fix/auto_update_with_bun_last
+    secrets: inherit
+
+  # デリバリー（ビルド&デプロイ)
+  delivery:
+    uses: nw-union/.github/.github/workflows/deploy_workers_with_bun.yml@main
+    needs: check
+    secrets: inherit
+    with:
+      command: versions upload --message "Deployed by GitHub Actions (${{ github.ref_name }})"
+      envs: '["production","development"]'
+
+  # コードの静的解析
+  analysis:
+    uses: nw-union/.github/.github/workflows/code_analysis.yml@main
+    needs: check
+    secrets: inherit
+
+  # PR の設定確認
+  chores:
+    uses: nw-union/.github/.github/workflows/pr_chores.yml@main
+    needs: check
+    secrets: inherit
+

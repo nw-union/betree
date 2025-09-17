@@ -103,7 +103,7 @@ const base64UrlDecode = (short: string): Result<Uint8Array, Error> => {
     const bytes = new Uint8Array(binary.length);
     for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
     return ok(bytes);
-  } catch (e) {
+  } catch (_e) {
     return err(new Error("Invalid base64 input"));
   }
 };

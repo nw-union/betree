@@ -8,11 +8,7 @@ import type {
   ValidatedEntryForm,
 } from "./type.ts";
 import { mergeValidationError, type AppError } from "../../lib/error.ts";
-import {
-  createEntryId,
-  newString1To100,
-  newUrlOrNone,
-} from "../vo.ts";
+import { createEntryId, newString1To100, newUrlOrNone } from "../vo.ts";
 
 // ----------------------------------------------------------------------------
 // Validater (DTO -> Domain Type)

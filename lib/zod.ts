@@ -1,5 +1,5 @@
 import { err, ok, type Result } from "neverthrow";
-import { z, ZodError } from "zod";
+import type { z, ZodError } from "zod";
 import { match } from "ts-pattern";
 import { ValidationError } from "./error";
 
@@ -27,7 +27,9 @@ export const newType =
   (src: unknown, name?: string): Result<z.infer<T>, ValidationError> =>
     match(schema.safeParse(src))
       .with({ success: true }, ({ data }) => ok(data))
-      .with({ success: false }, ({ error }) => err(newValidationError(type, error, name)))
+      .with({ success: false }, ({ error }) =>
+        err(newValidationError(type, error, name)),
+      )
       .exhaustive();
 
 const newValidationError = (type: string, e: ZodError, name?: string) =>

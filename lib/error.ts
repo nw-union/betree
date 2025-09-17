@@ -1,5 +1,3 @@
-import type { ZodError } from "zod";
-
 export class AppError extends Error {
   public code = "App Error";
   public details: string[];
