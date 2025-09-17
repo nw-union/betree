@@ -18,11 +18,11 @@
 
 ## 🌏 URL
 
-| Name        | URL                   |
-| :---------- | :-------------------- |
-| Production  |                       |
-| Development |                       |
-| Local       | http://localhost:5173 |
+| Name        | URL                                     |
+| :---------- | :-------------------------------------- |
+| Production  | betree.nw-union.net                     |
+| Development | betree-development.nw-union.workers.dev |
+| Local       | http://localhost:5173                   |
 
 <br />
 
