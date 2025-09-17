@@ -8,7 +8,7 @@ permissions:
 jobs:
   # 自動生成系コードをコミットする
   check:
-    uses: nw-union/.github/.github/workflows/auto_update_with_bun.yml@fix/auto_update_with_bun_last
+    uses: nw-union/.github/.github/workflows/auto_update_with_bun.yml@main
     secrets: inherit
 
   # デリバリー（ビルド&デプロイ)
