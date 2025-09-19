@@ -19,9 +19,9 @@ export interface Event {
   // 詳細（テキスト）
   description: string;
   // 開催日時
-  eventAt: Date;
+  eventAt: Date; // FIXME
   // チケット発売日
-  ticketReleaseAt: Date;
+  ticketReleaseAt: Date; // FIXME
   // メンバーと参加ステータスのリスト
   members: { member: Member; status: Attendance }[];
 }
@@ -37,9 +37,9 @@ export interface EventForm {
   // 詳細（テキスト）
   description: string;
   // 開催日時
-  eventAt: Date;
+  eventAt: Date; // FIXME
   // チケット発売日
-  ticketReleaseAt: Date;
+  ticketReleaseAt: Date; // FIXME
 }
 
 /**
@@ -60,10 +60,8 @@ export const newEventCategory = newType(eventCategory, "EventCategory");
  * 参加ステータス Enum
  */
 const attendance = z.enum([
-  "considering", // 悩み中
   "want", // 行きたい
-  "planning", // 参加予定
-  "confirmed", // 参加決定
+  "going", // 行く
 ]);
 export type Attendance = z.infer<typeof attendance>;
 export const allAttendance = attendance.options;
@@ -102,6 +100,7 @@ export interface EventWorkFlows {
 // CreateEvent コマンド
 export type CreateEventCmd = {
   form: EventForm;
+  memberId: string; // 作成するメンバーのID
 };
 
 // CreateEvent イベント
@@ -121,7 +120,8 @@ export type UpdateEventEvt = undefined;
 // UpdateMemberStatus コマンド
 export type UpdateMemberStatusCmd = {
   eventId: string;
-  status: Attendance;
+  status: Attendance | "not"; // "not" は参加しない // FIXME
+  memberId: string;
 };
 
 // UpdateMemberStatus イベント
