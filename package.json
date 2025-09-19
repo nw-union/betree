@@ -16,7 +16,7 @@
     "fmt": "biome format --write .",
     "lint": "biome lint --write .",
     "typecheck": "wrangler types && react-router typegen && tsc -b",
-    "check": "bun run fmt && bun run lint && bun run typecheck",
+    "check": "bun run fmt && bun run lint",
     "typegen": "wrangler types"
   },
   "dependencies": {

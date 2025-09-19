@@ -1,5 +1,5 @@
 import { match } from "ts-pattern";
-import type { AppError } from "./error.ts";
+import type { AppError } from "./lib/error.ts";
 
 export interface Logger {
   debug: (s: string, e?: AppError) => void;

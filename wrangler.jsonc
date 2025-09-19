@@ -44,7 +44,7 @@
           "database_id": "8879aec8-901a-4704-856d-661ab680731e",
           "migrations_dir": "./adapter/drizzle/migrations"
         }
-      ],
+      ]
       //"r2_buckets": [
       //  {
       //    "binding": "BUCKET",
@@ -75,7 +75,7 @@
           "database_id": "00b4c7e0-2148-450c-ba91-4628d47c6d16",
           "migrations_dir": "./adapter/drizzle/migrations"
         }
-      ],
+      ]
       //"r2_buckets": [
       //  {
       //    "binding": "BUCKET",
