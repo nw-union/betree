@@ -60,9 +60,7 @@
       "indexes": {
         "idx_entry_id": {
           "name": "idx_entry_id",
-          "columns": [
-            "entry_id"
-          ],
+          "columns": ["entry_id"],
           "isUnique": false
         }
       },
@@ -127,10 +125,7 @@
       "indexes": {
         "idx_element_content_id_order_num": {
           "name": "idx_element_content_id_order_num",
-          "columns": [
-            "content_id",
-            "order_num"
-          ],
+          "columns": ["content_id", "order_num"],
           "isUnique": false
         }
       },
@@ -195,9 +190,7 @@
       "indexes": {
         "idx_created_at": {
           "name": "idx_created_at",
-          "columns": [
-            "created_at"
-          ],
+          "columns": ["created_at"],
           "isUnique": false
         }
       },
